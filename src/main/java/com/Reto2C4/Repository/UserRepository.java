@@ -30,7 +30,7 @@ public class UserRepository {
      * @return 
      */
 
-    public Optional<User> getUser(Integer id) {
+    public Optional<User> getUser(int id) {
         return  userCrudRepository.findById(id);
     }
     /**

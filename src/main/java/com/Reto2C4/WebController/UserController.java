@@ -3,6 +3,7 @@ package com.Reto2C4.WebController;
 import com.Reto2C4.Entity.User;
 import com.Reto2C4.Service.UserService;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,7 +40,10 @@ public class UserController {
     public List<User> getAll() {
         return UserWeb.getAll();
     }
-    
+    @GetMapping("/{id}")
+    public Optional<User> getUser(@PathVariable("id") Integer id) {
+        return UserWeb.getUser(id);
+    }
     /**
      * Anotacion para Ingresar un nuevo usuarioo 
      * @param user
