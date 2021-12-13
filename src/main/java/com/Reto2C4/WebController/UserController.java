@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
- * @author Home
+ * 
+ * @author dyper
  */
 @RestController
 @RequestMapping("/api/user")
@@ -40,6 +40,11 @@ public class UserController {
     public List<User> getAll() {
         return UserWeb.getAll();
     }
+    /**
+     * 
+     * @param id
+     * @return 
+     */
     @GetMapping("/{id}")
     public Optional<User> getUser(@PathVariable("id") Integer id) {
         return UserWeb.getUser(id);
